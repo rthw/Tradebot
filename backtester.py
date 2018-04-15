@@ -1,4 +1,4 @@
-def backtestStrategy(candles, strategy) {
+def backtestStrategy(candles, strategy):
 
     states = ["Looking for entry", "Looking for exit"]    
     taken_trades = []
@@ -26,4 +26,3 @@ def backtestStrategy(candles, strategy) {
                 taken_trades.append({'entry': trade_entry, 'exit': trade_exit, 'entry_ts': trade_entry_ts, 'exit_ts': trade_exit_ts})
 
     return taken_trades
-}
