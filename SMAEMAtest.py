@@ -19,8 +19,6 @@ def SMA(candles, period):
             tempList = candles [i - period:i]
             average = sum (tempList) / period
             SMA.append (round (average, 2))
-
-    
     return SMA
 
 
@@ -32,19 +30,9 @@ def EMA (candles, period):
     EMA.append (initSMA)
     for i in range (len (candles)):
         EMA.append ((candles [i] - EMA [i]) * multiplier + EMA [i])
-
-    
     return EMA
 
 ema = EMA(df, 50)
-print(ema)
-
-#Multiplier: (2 / (Time periods + 1) ) 
-
-#EMA: {Close - EMA(previous day)} x multiplier + EMA(previous day) """
-
-
-
 sma = SMA(df, 50)
 
 

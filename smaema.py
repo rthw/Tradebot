@@ -17,7 +17,7 @@ def EMA (candles, period):
     
     EMA = []
     initSMA = (sum (candles [:period])) / period
-    multiplier = 2/(period+1)
+    multiplier = 2 / (period+1)
     EMA.append (initSMA)
     for i in range (len (candles)):
         EMA.append ((candles [i] - EMA [i]) * multiplier + EMA [i])
