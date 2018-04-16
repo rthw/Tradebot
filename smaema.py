@@ -1,7 +1,5 @@
-
-
-
 import pandas as pd
+
 def SMA(candles, period):
     
     SMA = []

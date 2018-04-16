@@ -1,14 +1,13 @@
-import datetime
 import matplotlib.pyplot as plt
 from matplotlib import style
 import pandas as pd
+import numpy as np
 
 
 
 df = pd.read_json('candles.json')
 df = df['C']
 
-period = 9
 
 def SMA(candles, period):
     
@@ -22,8 +21,12 @@ def SMA(candles, period):
             SMA.append (round(average, 2))
 
     del SMA[-period:]
+    return SMA
 
-print (SMA)
-plt.plot(df) 
-plt.plot(SMA)
-plt.show()  
+
+sma = SMA(df, 9)
+
+
+plt.plot(df)
+plt.plot(sma)
+plt.show()
