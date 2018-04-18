@@ -44,19 +44,20 @@ def tenkan(df, period):
             tenkan.append ((averageHighs + averageLows)/2)
     return tenkan
 
+SMAS = pd.rolling_mean(closes, 50)
+
 ema = EMA(closes, 50)
 sma = SMA(closes, 50)
 tenkan = tenkan(df, 9)
+
 #span here has arbitrary 26 period
 period = 26
 lagSpan = closes.shift(-period)
 
 #PLOT ALL THE STUFF!!!
-plt.plot(lagSpan)
+#plt.plot(lagSpan)
 plt.plot(closes)
-plt.plot(sma)
+plt.plot(SMAS)
 plt.plot(ema)
-plt.plot(tenkan)
+#plt.plot(tenkan)
 plt.show()
-
-print(tenkan)

@@ -19,9 +19,6 @@ def tenkan(df, period):
 #Kijun-sen (Base Line): (26-period high + 26-period low)/2))
 #Senkou Span A (Leading Span A): (Conversion Line + Base Line)/2))
 #Senkou Span B (Leading Span B): (52-period high + 52-period low)/2))
-#Close plotted 26 days in the past
 
-
-
-#calculating lagging span - shift pandas dataframe with closing prices by period
-lagSpan = s = closes.shift(-100)
+#Сalculating lagging span - shift pandas dataframe with closing prices by period
+lagSpan = s = closes.shift(-period)
